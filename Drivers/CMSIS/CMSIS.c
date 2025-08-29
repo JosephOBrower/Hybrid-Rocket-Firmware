@@ -1,4 +1,6 @@
 
+
+/*Register map for RCC (Reset Clock Control)*/
 typedef struct {
     volatile uint32_t CR;            // 0x00
     volatile uint32_t PLLCFGR;       // 0x04
@@ -32,14 +34,9 @@ typedef struct {
     volatile uint32_t PLLI2SCFGR;    // 0x84
     uint32_t RESERVED7;              // 0x88
     volatile uint32_t DCKCFGR;       // 0x8C
-} RCC_TypeDef;
+} RCC_Struct;
 
-/*0x4002 3800 - 0x4002 3BFF RCC (Reset and Clock Control)*/
-#define my_RCC ((volatile RCC*)0x40023800)
-
-int main(void){
-    /* Loop forever */
-	for(;;){
-
-	}
-}
+//RCC_Struct* RCC = ((RCC_Struct*)0x40023800);
+//int* ptr = bob;
+#define RCC (RCC_Struct*)0x40023800;
+RCC->BDCR = 0x00;
