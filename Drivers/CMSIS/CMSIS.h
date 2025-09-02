@@ -57,8 +57,9 @@ typedef struct {
 	volatile uint32_t LCKR; //0x1C
 	volatile uint32_t AFRL; //0x20
 	volatile uint32_t AFRH; //0x24
-} GPIOD_Struct;
+} GPIO_Struct;
 
-#define GPIOD ((GPIOD_Struct*)0x40020C00)
+#define GPIOD ((GPIO_Struct*)0x40020C00)
+#define GPIOA ((GPIO_Struct*)0x40020000)
 
 #endif //__CMSIS_H
